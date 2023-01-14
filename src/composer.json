@@ -6,10 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "guzzlehttp/guzzle": "^0.2",
+        "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.1002"
+        "laravel/tinker": "^2.7"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -36,11 +36,6 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
-            "php artisan config:cache",
-            "php artisan clear-compiled",
-            "chmod -R 777 public/",
-            "chmod -R 755 bootstrap\/cache",
-            "php artisan cache:clear"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
@@ -51,7 +46,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "post-install-cmd": [
+        "test": [
             "php artisan config:cache",
             "php artisan clear-compiled",
             "chmod -R 777 public/",
