@@ -47,6 +47,7 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
+            "php artisan config:cache",
             "php artisan clear-compiled",
             "chmod -R 777 public/",
             "chmod -R 755 bootstrap\/cache",
