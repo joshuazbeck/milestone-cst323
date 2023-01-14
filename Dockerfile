@@ -19,3 +19,5 @@ RUN chown -R www-data: /app
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 CMD sh /app/docker/startup.sh
+
+CMD php artisan config:cache
