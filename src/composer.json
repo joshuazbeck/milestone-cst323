@@ -47,7 +47,9 @@
             "@php artisan key:generate --ansi"
         ],
         "test": [
-            "php artisan config:cache",
+            "php artisan cache:clear",
+            "php artisan config:clear",
+            "php artisan route:clear",
             "php artisan clear-compiled",
             "chmod -R 777 public/",
             "chmod -R 755 bootstrap\/cache",
