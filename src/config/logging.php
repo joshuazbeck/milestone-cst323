@@ -53,10 +53,15 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['database-logger', 'single'],
             'ignore_exceptions' => false,
         ],
-
+        'database-logger' => [
+            'driver' => 'custom',
+            'handler' => App\Logging\DatabaseLoggingHandler::class,
+            'via' => App\Logging\DatabaseLogger::class,
+            'level' => 'debug',
+        ],
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
