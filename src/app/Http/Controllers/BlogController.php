@@ -88,6 +88,7 @@ class BlogController
         $blog = \App\Models\Blog::where('id', '=', $id)->first();
 
         if ($blog == null){
+            \Log::error(date('[Y-m-d H:i:s] ') . ': ' . ' ERROR: No blog found with ID in BlogController.view($id)');
             abort(404, "No blog found with that id");
         }
 
